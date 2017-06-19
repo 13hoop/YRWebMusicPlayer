@@ -24,7 +24,7 @@ body {
     align-items: center;
 }
 
-.playerMain {
+.detailShow {
     background: #eee;
     text-align: center;
     margin: 20px 0px;
@@ -32,22 +32,23 @@ body {
     flex-basis: 70%;
 }
 
-.playerMain img {
+.detailShow img {
     width: 260px;
 }
 
-.playerMain h3 {
+.detailShow h3 {
     /*padding: 0px;*/
     margin: 10px;
     color: #211919;
 }
 
-.playerMain span {
+.detailShow span {
     font-size: 13px;
     color: #9a9a9a;
 }
 
-.palyerProgress {
+
+.controlShow {
     background: rebeccapurple;
     flex-basis: 30%;
     width: 100%;
@@ -55,12 +56,30 @@ body {
     flex-direction: column;
 }
 
-.palyerProgress .progressBar {
-    height: 30px;
-    background: red;
+.controlShow .statusZone {
+    display: flex;
+    border: 1px saddlebrown solid;
 }
 
-.palyerProgress .btnRow {
+.controlShow .statusZone .bar {
+    background: red;
+    flex-grow: 1;
+    margin: 0px 10px;
+ }
+
+.controlShow .statusZone .bar .now {
+    width: 10px;
+    height: 100%;
+    border-radius: 50%;
+    background: lightgray;
+}
+
+.controlShow .statusZone .time {
+    color: white;
+    margin-right: 10px; 
+}
+
+.controlShow .funcZone {
     margin: auto;
     width: 80%;
     background: #eee;
@@ -68,11 +87,11 @@ body {
     align-items: center;
     justify-content: space-around;
 }
-.palyerProgress .btn {
+.controlShow .funcZone .iconfont {
     display: inline-flex;
     font-size: 1.5em;
 }
 
-.palyerProgress .palyOrPlause {
+.controlShow .funcZone .play {
     font-size: 3em;
 }

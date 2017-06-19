@@ -16,17 +16,22 @@ var musicList = [{
 //     this.auther = auther
 //   }
 // }
-var backBtn = document.querySelector('.musicBox .back')
-var playBtn = document.querySelector('.musicBox .play')
-var forwardBtn = document.querySelector('.musicBox .forward')
-var titleNode = document.querySelector('.musicBox .playerMain H3')
-var authorNode = document.querySelector('.musicBox .playerMain span')
-var timeNode = document.querySelector('.musicBox .time')
-var progressBarNode = document.querySelector('.musicBox .palyerProgress .progressBar')
-var progressNowNode = document.querySelector('.musicBox .palyerProgress .progress-now')
+var backBtn = document.querySelector('.musicBox .controlShow .funcZone .back')
+var playBtn = document.querySelector('.musicBox .controlShow .funcZone .play')
+var forwardBtn = document.querySelector('.musicBox .controlShow .funcZone .forward')
+var timeNode = document.querySelector('.musicBox .controlShow .statusZone .time')
+var progressBarNode = document.querySelector('.musicBox .controlShow .statusZone .bar')
+var progressNowNode = document.querySelector('.musicBox .controlShow .statusZone .bar .now')
+
+var titleNode = document.querySelector('.musicBox .detailShow h3')
+var authorNode = document.querySelector('.musicBox .detailShow span')
+var imgNode = document.querySelector('.musicBox .detailShow img')
+
+
+// create music elmNode
 var music = new Audio()
 music.autoplay = true
-var musicIndex = 0
+// var musicIndex = 0
 
 // getMusic(function (musicList) {
 //   loadMusic(musicList[musicIndex])
@@ -51,18 +56,22 @@ module.exports = function () {
   let author = "Betals & Betals"
 
   MusicPlayer.innerHTML = `
-  <div class='playerMain'>
+  <div class='detailShow'>
     <img src=${imgUrl}>
     <h3>${title}</h3>
-    <span>${author}<span>  
+    <span>${author}</span>  
   </div>
-  <div class='palyerProgress'>
-    <div class='progressBar'></div>
-    <div class="time">0:00</div>
-    <div class='btnRow'>
-      <span class='btn back iconfont icon-shangyishou' ></span>
-      <span class='btn play palyOrPlause iconfont icon-weibiaoti-' ></span>
-      <span class='btn forward iconfont icon-xiayishou' ></span>
+  <div class='controlShow'>
+    <div class='statusZone'>
+      <div class='bar'>
+        <div class='now'></div>
+      </div>
+      <div class="time">00:00</div>
+    </div>
+    <div class='funcZone'>
+      <span class='back iconfont icon-shangyishou' ></span>
+      <span class='play iconfont icon-weibiaoti-' ></span>
+      <span class='forward iconfont icon-xiayishou' ></span>
     </div>
   </div>
   `
