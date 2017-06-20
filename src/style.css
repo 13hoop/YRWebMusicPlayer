@@ -49,7 +49,6 @@ body {
 
 
 .controlShow {
-    background: rebeccapurple;
     flex-basis: 30%;
     width: 100%;
     display: flex;
@@ -58,22 +57,28 @@ body {
 
 .controlShow .statusZone {
     display: flex;
-    border: 1px saddlebrown solid;
 }
 
 .controlShow .statusZone .bar {
-    background: red;
     flex-grow: 1;
     margin: 0px 10px;
+    display: flex;
+    align-items: center;
  }
-
-.controlShow .statusZone .bar .now {
-    width: 10px;
-    height: 100%;
-    border-radius: 50%;
-    background: lightgray;
+ .controlShow .statusZone .bar:hover {
+    cursor: pointer;
+ }
+.controlShow .statusZone .bar .barStatic {
+    width: 100%;
+    height: 10%;
+    background: #555;
 }
-
+.controlShow .statusZone .bar .barStatic .now {
+    width: 0%;
+    height: 100%;
+    /*border-radius: 50%;*/
+    background: linear-gradient(to right, #eee, yellow);
+} 
 .controlShow .statusZone .time {
     color: white;
     margin-right: 10px; 
@@ -82,7 +87,6 @@ body {
 .controlShow .funcZone {
     margin: auto;
     width: 80%;
-    background: #eee;
     display: flex;
     align-items: center;
     justify-content: space-around;
