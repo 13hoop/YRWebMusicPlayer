@@ -1,27 +1,80 @@
+ul, a{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
 body {
   margin: 0;
+  display: flex;
 }
 
 #root {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ea2;
+    background: #dedfe1;
 }
 
 .musicBox {
-    min-width: 400px;
+    /*min-width: 400px;*/
     height: 520px;
     box-shadow: 0rem 6em 8em -3em;
     border-radius: 10px;
-    background: #4ad;
+    display: flex;
+}
+@media screen and (max-width: 900px) {
+    .musicBox {
+        display: block;
+        margin-top: 30px; 
+        margin-bottom: 80px; 
+    }
+}
+.listSection {
+    width: 400px;
+    /*height: 520px;*/
+    background: #ec7155;
+}
+
+.listSection ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid red;
+    color: #eee;
+    background: #dce8f5;
+    border-radius: 0px 15px 15px 0px;
+}
+
+.listSection ul li:hover {
+    background: #608989;
+    cursor: pointer;
+}
+
+.listSection ul li div {
+    font-size: 18px;
+    margin: 5px 10px;
+    color: #626668;
+    /*background: lightcoral;*/
+}
+.listSection ul li span {
+    margin-right: 10px;
+    font-size: 13px;
+    color: #2d79fe;
+}
+
+.playerSection {
+    min-width: 400px;
+    height: 520px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background: #608989;
 }
 
 .detailShow {
@@ -30,6 +83,7 @@ body {
     margin: 20px 0px;
     flex: 3;
     flex-basis: 70%;
+    box-shadow: -10px 10px 32px -8px;
 }
 
 .detailShow img {
@@ -37,9 +91,8 @@ body {
 }
 
 .detailShow h3 {
-    /*padding: 0px;*/
     margin: 10px;
-    color: #211919;
+    color: #c6c6bc;
 }
 
 .detailShow span {
@@ -97,5 +150,12 @@ body {
 }
 
 .controlShow .funcZone .play {
-    font-size: 3em;
+    font-size: 2em;
+    display: block;
+    text-align: center;
+    line-height: 52px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    box-shadow: 1px 2px 5px 2px #345353;
 }
