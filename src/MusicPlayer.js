@@ -104,6 +104,7 @@ function MusicPlayer() {
     var index = 0
     songArr.forEach(function (obj) {
       html += `<li data-index=${index}>
+              <span class='play iconfont icon-bofang1' ></span>
                 <div>${obj.title}</div>
                 <span>${obj.auther}</span>
                </li>`

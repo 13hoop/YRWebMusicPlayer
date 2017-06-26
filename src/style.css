@@ -37,14 +37,14 @@ body {
 .listSection {
     width: 400px;
     /*height: 520px;*/
-    background: #ec7155;
+    background: #403937;
 }
 
 .listSection ul li {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    border-bottom: 1px solid red;
+    margin-bottom: 3px; 
     color: #eee;
     background: #dce8f5;
     border-radius: 0px 15px 15px 0px;
@@ -58,7 +58,6 @@ body {
 .listSection ul li div {
     font-size: 18px;
     margin: 5px 10px;
-    color: #626668;
     /*background: lightcoral;*/
 }
 .listSection ul li span {
@@ -66,6 +65,10 @@ body {
     font-size: 13px;
     color: #2d79fe;
 }
+.listSection ul li .iconfont {
+    font-size: 2em;
+    margin-left: 10px;
+} 
 
 .playerSection {
     min-width: 400px;
@@ -74,7 +77,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: #608989;
+    background: #4ac;
 }
 
 .detailShow {
