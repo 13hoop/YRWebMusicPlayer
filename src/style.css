@@ -17,15 +17,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #dedfe1;
+    background: #ea2;
 }
 
 .musicBox {
     /*min-width: 400px;*/
-    height: 520px;
+    min-height: 520px;
     box-shadow: 0rem 6em 8em -3em;
     border-radius: 10px;
     display: flex;
+    overflow: hidden;
 }
 @media screen and (max-width: 900px) {
     .musicBox {
@@ -36,38 +37,47 @@ body {
 }
 .listSection {
     width: 400px;
-    /*height: 520px;*/
-    background: #403937;
+    background: #4ae;
+}
+
+.listSection ul {
+    padding: 5px 2px 20px 2px;
 }
 
 .listSection ul li {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 3px; 
-    color: #eee;
-    background: #dce8f5;
-    border-radius: 0px 15px 15px 0px;
+    margin: 0px 3px 1px 2px; 
+    box-shadow: 2px 1px 7px -2px;
+    /*background: #;*/
 }
 
 .listSection ul li:hover {
-    background: #608989;
+    background: #2980B9;
     cursor: pointer;
+}
+
+.activeSongTtem {
+    background: #2980B9;
+    border: 2px solid lightcyan;
 }
 
 .listSection ul li div {
     font-size: 18px;
     margin: 5px 10px;
-    /*background: lightcoral;*/
+    color: #ECF0F1;
+    flex-grow: 1;
 }
 .listSection ul li span {
     margin-right: 10px;
     font-size: 13px;
-    color: #2d79fe;
+    color: #2C3E50;
 }
 .listSection ul li .iconfont {
-    font-size: 2em;
+    font-size: 1.5em;
     margin-left: 10px;
+    margin-top: 2px;
 } 
 
 .playerSection {
@@ -77,7 +87,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: #4ac;
+    background: #4ae;
 }
 
 .detailShow {

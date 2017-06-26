@@ -1,19 +1,15 @@
 var musicList = [{
-  src: 'http://cloud.hunger-valley.com/music/ifyou.mp3',
+  src: '//cloud.hunger-valley.com/music/ifyou.mp3',
   title: 'IF YOU',
   auther: 'Big Bang',
-  imgUrl: "http://pic.xiami.net/images/album/img81/23681/236811442023681.jpg@4e_1c_100Q_185w_185h"
+  imgUrl: "//pic.xiami.net/images/album/img81/23681/236811442023681.jpg@4e_1c_100Q_185w_185h"
 }, {
-  src: 'http://cloud.hunger-valley.com/music/玫瑰.mp3',
+  src: '//cloud.hunger-valley.com/music/玫瑰.mp3',
   title: '玫瑰',
   auther: 'The Beatles',
-  imgUrl: "http://pic.xiami.net/images/album/img29/10029/1684161450154192.jpeg@4e_1c_100Q_185w_185h"
-},{
-  src:'http://219.148.175.72/m10.music.126.net/20170621121632/f0f5eac4d05f41d12ed4c271d1f4b4d4/ymusic/cfd8/5e16/f991/76b9d6498d4bcf457317d7cc40b2d318.mp3',
-  title:'Love Me Do',
-  auther:'The Beatles',
-  imgUrl:'http://p1.music.126.net/Yd63cGGFMiH3foirJNFG7w==/17796695207566215.jpg'
-}]
+  imgUrl: "//pic.xiami.net/images/album/img29/10029/1684161450154192.jpeg@4e_1c_100Q_185w_185h"
+},
+]
 
 function data() {
   function getMusic(callback) {
@@ -47,7 +43,7 @@ var musicIndex = 0
 function createPlayer() {
   var Player = document.createElement('div')
   Player.className = 'musicBox'
-  let imgUrl = "http://iph.href.lu/300x300?text=%E4%B8%93%E8%BE%91%E5%9B%BE%E7%89%87"
+  let imgUrl = "//iph.href.lu/300x300?text=%E4%B8%93%E8%BE%91%E5%9B%BE%E7%89%87"
   let title = "歌曲名"
   let author = "作词 & 作曲"
 
@@ -104,7 +100,7 @@ function MusicPlayer() {
     var index = 0
     songArr.forEach(function (obj) {
       html += `<li data-index=${index}>
-              <span class='play iconfont icon-bofang1' ></span>
+                <span class='iconfont icon-yinle' ></span>
                 <div>${obj.title}</div>
                 <span>${obj.auther}</span>
                </li>`
@@ -116,14 +112,20 @@ function MusicPlayer() {
   listSecNode.appendChild(createList(musicList))
 
   document.querySelector('.musicBox .listSection ul').addEventListener("click", function (e) {
-    if (event.target.tagName.toLowerCase() === 'li') {
-      // 真正的处理过程在这里
-      console.log(e.target.dataset.index)
-      musicIndex = e.target.dataset.index
-      readySonge(musicList[musicIndex])
-      music.play()
+    if (event.target.tagName.toLowerCase() === 'ul') {
+      return
     }
-  })
+    let liNode = event.target.closest('li')
+    let s = liNode.closest('ul').querySelectorAll('li')
+    for (var i = 0; i < s.length; i++) {
+      s[i].classList.remove('activeSongTtem')
+    }
+    liNode.classList.add('activeSongTtem')
+
+    musicIndex = liNode.dataset.index
+    readySonge(musicList[musicIndex])
+    music.play()
+  },true)
 
   function readySonge(songObj) {
     music.src = songObj.src
