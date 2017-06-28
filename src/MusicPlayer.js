@@ -65,7 +65,7 @@ var musicIndex = 0
 function createPlayer() {
   var Player = document.createElement('div')
   Player.className = 'musicBox'
-  let imgUrl = "//iph.href.lu/300x300?text=%E4%B8%93%E8%BE%91%E5%9B%BE%E7%89%87"
+  let imgUrl = "./placeHolderImge.png"
   let title = "歌曲名"
   let author = "作词 & 作曲"
 
@@ -96,8 +96,6 @@ function createPlayer() {
     <div class='bgBlur'></div>
   </div>
   `
-      // <div class='listContent'></div>
-
   document.getElementById('root').appendChild(Player)
 }
 createPlayer()
