@@ -8,16 +8,22 @@ ul, a{
 body {
   margin: 0;
   display: flex;
+
 }
 
 #root {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0px;
+    bottom: 0px;
     width: 100%;
     min-height: 100vh;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ea2;
+    /*background: #ea2;*/
 }
 
 .musicBox {
@@ -31,17 +37,35 @@ body {
 @media screen and (max-width: 900px) {
     .musicBox {
         display: block;
+        min-height: 520px;
         margin-top: 30px; 
         margin-bottom: 80px; 
     }
 }
 .listSection {
     width: 400px;
+    min-height: 400px;
     background: #4ae;
+    position: relative;
+}
+
+.listSection .bgBlur {
+    background-image:url();
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(1px);
+    height: 100%;
+    width: 100%;
 }
 
 .listSection ul {
     padding: 5px 2px 20px 2px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;    
 }
 
 .listSection ul li {
