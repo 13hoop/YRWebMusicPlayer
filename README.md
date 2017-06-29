@@ -2,6 +2,8 @@
 
 a HTML5 Audio player
 
+site: [https://13hoop.github.io/YRWebMusicPlayer/src/index.html](https://13hoop.github.io/YRWebMusicPlayer/src/index.html)
+
 ![preview](http://wx1.sinaimg.cn/mw1024/006mou3Bly1fh12ms3y70j31kw0x4130.jpg)
 
 ### done
